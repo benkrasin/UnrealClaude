@@ -170,9 +170,10 @@ protected:
 		TArray<FString> Unknown;
 		for (const auto& Pair : Params->Values)
 		{
-			if (!Known.Contains(Pair.Key))
+			const FString PairKey(Pair.Key);
+			if (!Known.Contains(PairKey))
 			{
-				Unknown.Add(Pair.Key);
+				Unknown.Add(PairKey);
 			}
 		}
 		return Unknown;
